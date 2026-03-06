@@ -6,8 +6,9 @@
 //
 import { PublicKey } from "@solana/web3.js";
 
+// Synced with programs/sol-marketplace (declare_id!) and Anchor.toml [programs.devnet]
 export const ESCROW_PROGRAM_ID = new PublicKey(
-"11111111111111111111111111111111"
+  "7Aeyy6HZa97qQxvChJB3xW9Tp3phD9ZDSEUqoMJSsbui"
 );
 
 
@@ -42,15 +43,4 @@ export * from "./utils";
 
 
 
-//                    Default Export (Optional)
-//
-// Some projects prefer a single default export.
-// You can remove this block if you don't want it.
-//
-import * as EscrowSdk from "."; // circular-safe due to TS hoisting
 
-export default {
-EscrowClient: EscrowSdk.EscrowClient,
-ESCROW_PROGRAM_ID,
-...EscrowSdk,
-};

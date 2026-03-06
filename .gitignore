@@ -7,6 +7,8 @@ node_modules/
 /app/build
 /app/dist
 
+/docs
+
 # Environment variables
 #.env
 #.env.local

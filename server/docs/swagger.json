@@ -17,6 +17,9 @@
     },
     {
       "name": "users"
+    },
+    {
+      "name": "verify-tx"
     }
   ],
   "components": {
@@ -29,6 +32,71 @@
     }
   },
   "paths": {
+    "/verify-tx": {
+      "get": {
+        "tags": ["verify-tx"],
+        "summary": "Verify Solana transaction (Devnet)",
+        "description": "Fetches the transaction from Devnet and confirms: exists, status success, expected wallet involved.",
+        "parameters": [
+          {
+            "name": "signature",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "wallet",
+            "in": "query",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Verification result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "verified": { "type": "boolean" },
+                    "signature": { "type": "string" },
+                    "transactionExists": { "type": "boolean" },
+                    "statusSuccess": { "type": "boolean" },
+                    "walletInvolved": { "type": "boolean" },
+                    "slot": { "type": "number" },
+                    "error": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["verify-tx"],
+        "summary": "Verify Solana transaction (Devnet) via body",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["signature", "wallet"],
+                "properties": {
+                  "signature": { "type": "string" },
+                  "wallet": { "type": "string" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Verification result"
+          }
+        }
+      }
+    },
     "/freelancers": {
       "get": {
         "tags": ["users"],
